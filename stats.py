@@ -7,6 +7,8 @@ def word_count(txt: str) -> int:
     return len(txt.split())
 
 def char_count(txt: str) -> dict:
+    # counts each character in the text.
+    # return a dictionary key: character value: count
     chars = dict()
     for c in txt.lower():
         if c not in chars:
@@ -15,3 +17,9 @@ def char_count(txt: str) -> dict:
             chars[c] += 1
     return chars
 
+def sort_chars_by_count(chars: dict):
+    # takes in a dictionary of chararters and their count
+    # returns a list of tuples with the character and count in each
+
+    l = [(k,v) for k,v in chars.items()]
+    return sorted(l, reverse=True, key=lambda x: x[1])
